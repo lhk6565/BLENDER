@@ -1,0 +1,114 @@
+{
+    "RotatedMNIST"  : {"dataloader": {"batch_size": 128,
+                                      "num_workers": 2,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"inv_dims": [256, 128, 128, 64],
+                                      "spec_dims": [256, 128, 128, 64],
+                                      "z_inv_dim": 64,
+                                      "z_spec_dim": 64,
+                                      "dec_dims": [128, 256, 512],
+                                      "embed_base": "cnn",
+                                      "embedding_kwargs": {"in_channels": [1, 28, 28],
+                                                           "conv_dims": [32, 64],
+                                                           "kernel_size": 5,
+                                                           "stride": 1,
+                                                           "padding": 2}
+                                     },
+                       "trainer"   : {"epochs": 100,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      },
+
+    "VLCS"          : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 2,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"inv_dims": [512],
+                                      "spec_dims": [512],
+                                      "z_inv_dim": 128,
+                                      "z_spec_dim": 128,
+                                      "dec_dims": [512],
+                                      "embed_base": "resnet50"
+                                     },
+                       "trainer"   : {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      },
+
+    "PACS"          : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 2,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"inv_dims": [512],
+                                      "spec_dims": [512],
+                                      "z_inv_dim": 128,
+                                      "z_spec_dim": 128,
+                                      "dec_dims": [512],
+                                      "embed_base": "resnet50"
+                                     },
+                       "trainer"   : {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      },
+
+    "OfficeHome"    : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 2,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"inv_dims": [1024, 512, 256, 128],
+                                      "spec_dims": [1024, 512, 256, 128],
+                                      "z_inv_dim": 128,
+                                      "z_spec_dim": 128,
+                                      "dec_dims": [256, 512, 1024],
+                                      "embed_base": "resnet50"
+                                     },
+                       "trainer"   : {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      },
+
+    "DomainNet"     : {"dataloader": {"batch_size": 128,
+                                      "num_workers": 4,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"inv_dims": [1024, 512, 256, 128],
+                                      "spec_dims": [1024, 512, 256, 128],
+                                      "z_inv_dim": 128,
+                                      "z_spec_dim": 128,
+                                      "dec_dims": [256, 512, 1024],
+                                      "embed_base": "resnet50"
+                                     },
+                       "trainer"   : {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      },
+
+    "TerraIncognita": {"dataloader": {"batch_size": 32,
+                                      "num_workers": 2,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"inv_dims": [1024, 512, 256, 128],
+                                      "spec_dims": [1024, 512, 256, 128],
+                                      "z_inv_dim": 128,
+                                      "z_spec_dim": 128,
+                                      "dec_dims": [256, 512, 1024],
+                                      "embed_base": "resnet50"
+                                     },
+                       "trainer"   : {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      }
+}

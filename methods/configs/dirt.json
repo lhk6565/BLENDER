@@ -1,0 +1,106 @@
+{
+    "VLCS"          : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 1,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"hidden_dim": 256,
+                                      "base": "resnet50",
+                                      "embedding_kwargs": {"g_conv_dim": 64,
+                                                           "d_conv_dim": 64,
+                                                           "g_repeat_num": 6,
+                                                           "d_repeat_num": 6,
+                                                           "lambda_cls": 1,
+                                                           "lambda_rec": 10,
+                                                           "lambda_gp": 10}
+                                     },
+                       "trainer"   : {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      },
+
+    "PACS"          : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 1,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"hidden_dim": 256,
+                                      "base": "resnet50",
+                                      "embedding_kwargs": {"g_conv_dim": 64,
+                                                           "d_conv_dim": 64,
+                                                           "g_repeat_num": 6,
+                                                           "d_repeat_num": 6,
+                                                           "lambda_cls": 1,
+                                                           "lambda_rec": 10,
+                                                           "lambda_gp": 10}
+                                     },
+                       "trainer"   : {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      },
+
+    "OfficeHome"    : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 1,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"hidden_dim": 256,
+                                      "base": "resnet50",
+                                      "embedding_kwargs": {"g_conv_dim": 64,
+                                                           "d_conv_dim": 64,
+                                                           "g_repeat_num": 6,
+                                                           "d_repeat_num": 6,
+                                                           "lambda_cls": 1,
+                                                           "lambda_rec": 10,
+                                                           "lambda_gp": 10}
+                                     },
+                       "trainer"   : {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      },
+
+    "DomainNet"     : {"dataloader": {"batch_size": 128,
+                                      "num_workers": 4,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"hidden_dim": 256,
+                                      "base": "resnet50",
+                                      "embedding_kwargs": {"g_conv_dim": 64,
+                                                           "d_conv_dim": 64,
+                                                           "g_repeat_num": 6,
+                                                           "d_repeat_num": 6,
+                                                           "lambda_cls": 1,
+                                                           "lambda_rec": 10,
+                                                           "lambda_gp": 10}
+                                     },
+                       "trainer"   : {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      },
+
+    "TerraIncognita": {"dataloader": {"batch_size": 32,
+                                      "num_workers": 3,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"hidden_dim": 256,
+                                      "base": "resnet50",
+                                      "embedding_kwargs": {"g_conv_dim": 64,
+                                                           "d_conv_dim": 64,
+                                                           "g_repeat_num": 6,
+                                                           "d_repeat_num": 6,
+                                                           "lambda_cls": 1,
+                                                           "lambda_rec": 10,
+                                                           "lambda_gp": 10}
+                                     },
+                       "trainer"   : {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      }
+}

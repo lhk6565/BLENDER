@@ -1,0 +1,91 @@
+{
+    "VLCS"          : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 1,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"zd_dim": 64,
+                                      "zx_dim": 64,
+                                      "zy_dim": 64,
+                                      "aux_loss_multiplier_y": 3500.0,
+                                      "aux_loss_multiplier_d": 2000.0,
+                                      "embed_base": "resnet50"
+                                     },
+                       "trainer"   : {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      },
+
+    "PACS"          : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 1,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"zd_dim": 64,
+                                      "zx_dim": 64,
+                                      "zy_dim": 64,
+                                      "aux_loss_multiplier_y": 3500.0,
+                                      "aux_loss_multiplier_d": 2000.0,
+                                      "embed_base": "resnet50"
+                                     },
+                       "trainer"   : {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      },
+
+    "OfficeHome"    : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 1,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"zd_dim": 64,
+                                      "zx_dim": 64,
+                                      "zy_dim": 64,
+                                      "aux_loss_multiplier_y": 3500.0,
+                                      "aux_loss_multiplier_d": 2000.0,
+                                      "embed_base": "resnet50"
+                                     },
+                       "trainer"   : {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      },
+
+    "DomainNet"     : {"dataloader": {"batch_size": 128,
+                                      "num_workers": 4,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"zd_dim": 64,
+                                      "zx_dim": 64,
+                                      "zy_dim": 64,
+                                      "aux_loss_multiplier_y": 3500.0,
+                                      "aux_loss_multiplier_d": 2000.0,
+                                      "embed_base": "resnet50"
+                                     },
+                       "trainer"   : {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      },
+
+    "TerraIncognita": {"dataloader": {"batch_size": 32,
+                                      "num_workers": 3,
+                                      "val_ratio": 0.2
+                                      },
+                       "model"     : {"zd_dim": 64,
+                                      "zx_dim": 64,
+                                      "zy_dim": 64,
+                                      "aux_loss_multiplier_y": 3500.0,
+                                      "aux_loss_multiplier_d": 2000.0,
+                                      "embed_base": "resnet50"
+                                     },
+                       "trainer"   : {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 1e-4
+                                     }
+                      }
+}

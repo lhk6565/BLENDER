@@ -1,0 +1,103 @@
+{
+    "VLCS"          : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 2,
+                                      "domain_num_workers": 2,
+                                      "domain_prefetch_factor": 4,
+                                      "val_ratio": 0.2
+                                     },
+                       "model":      {"backbone": "resnet50",
+                                      "pretrained": true,
+                                      "inner_lr": 0.01,
+                                      "domain_batch_size": 32
+                                     },
+                       "trainer":    {"epochs": 5100,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 5e-05,
+                                      "weight_decay": 0.0,
+                                      "eval_step": 300,
+                                      "log_step": 10
+                                     }
+                      },
+
+    "PACS"          : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 2,
+                                      "domain_num_workers": 2,
+                                      "domain_prefetch_factor": 4,
+                                      "val_ratio": 0.2
+                                     },
+                       "model":      {"backbone": "resnet50",
+                                      "pretrained": true,
+                                      "inner_lr": 0.01,
+                                      "domain_batch_size": 32
+                                     },
+                       "trainer":    {"epochs": 5100,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 5e-05,
+                                      "weight_decay": 0.0,
+                                      "eval_step": 300,
+                                      "log_step": 10
+                                     }
+                      },
+    "OfficeHome"    : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 2,
+                                      "domain_num_workers": 2,
+                                      "domain_prefetch_factor": 4,
+                                      "val_ratio": 0.2
+                                     },
+                       "model":      {"backbone": "resnet50",
+                                      "pretrained": true,
+                                      "inner_lr": 0.01,
+                                      "domain_batch_size": 32
+                                     },
+                       "trainer":    {"epochs": 5100,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 5e-05,
+                                      "weight_decay": 0.0,
+                                      "eval_step": 300,
+                                      "log_step": 10
+                                     }
+                      },
+    "DomainNet"     : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 4,
+                                      "domain_num_workers": 2,
+                                      "domain_prefetch_factor": 4,
+                                      "val_ratio": 0.2
+                                     },
+                       "model":      {"backbone": "resnet50",
+                                      "pretrained": true,
+                                      "inner_lr": 0.01,
+                                      "domain_batch_size": 32
+                                     },
+                       "trainer":    {"epochs": 15000,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 5e-05,
+                                      "weight_decay": 0.0,
+                                      "eval_step": 300,
+                                      "log_step": 10
+                                     }
+                      },
+    "TerraIncognita": {"dataloader": {"batch_size": 32,
+                                      "num_workers": 2,
+                                      "domain_num_workers": 2,
+                                      "domain_prefetch_factor": 4,
+                                      "val_ratio": 0.2
+                                     },
+                       "model":      {"backbone": "resnet50",
+                                      "pretrained": true,
+                                      "inner_lr": 0.01,
+                                      "domain_batch_size": 32
+                                     },
+                       "trainer":    {"epochs": 5100,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 5e-05,
+                                      "weight_decay": 0.0,
+                                      "eval_step": 300,
+                                      "log_step": 10
+                                     }
+                      }
+}

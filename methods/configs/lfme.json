@@ -1,0 +1,96 @@
+{
+    "VLCS"          : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 2,
+                                      "val_ratio": 0.2
+                                     },
+                       "model":      {"backbone": "resnet50",
+                                      "pretrained": true,
+                                      "resnet_dropout": 0.0,
+                                      "freeze_bn": true,
+                                      "nonlinear_classifier": false
+                                     },
+                       "trainer":    {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 0.0001,
+                                      "weight_decay": 0.0,
+                                      "lfe_reg": 1.0
+                                     }
+                      },
+
+  "PACS"            : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 2,
+                                      "val_ratio": 0.2
+                                     },
+                       "model":      {"backbone": "resnet50",
+                                      "pretrained": true,
+                                      "resnet_dropout": 0.0,
+                                      "freeze_bn": true,
+                                      "nonlinear_classifier": false
+                                     },
+                       "trainer":    {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 0.0001,
+                                      "weight_decay": 0.0,
+                                      "lfe_reg": 1.0
+                                     }
+                      },
+
+  "OfficeHome"      : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 2,
+                                      "val_ratio": 0.2
+                                     },
+                       "model":      {"backbone": "resnet50",
+                                      "pretrained": true,
+                                      "resnet_dropout": 0.0,
+                                      "freeze_bn": true,
+                                      "nonlinear_classifier": false
+                                     },
+                       "trainer":    {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 0.0001,
+                                      "weight_decay": 0.0,
+                                      "lfe_reg": 1.0
+                                     }
+                      },
+
+  "DomainNet"       : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 4,
+                                      "val_ratio": 0.2
+                                     },
+                       "model":      {"backbone": "resnet50",
+                                      "pretrained": true,
+                                      "resnet_dropout": 0.0,
+                                      "freeze_bn": true,
+                                      "nonlinear_classifier": false
+                                     },
+                       "trainer":    {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 0.0001,
+                                      "weight_decay": 0.0,
+                                      "lfe_reg": 1.0
+                                     }
+                      },
+
+  "TerraIncognita"  : {"dataloader": {"batch_size": 32,
+                                      "num_workers": 2,
+                                      "val_ratio": 0.2
+                                     },
+                       "model":      {"backbone": "resnet50",
+                                      "pretrained": true,
+                                      "resnet_dropout": 0.0,
+                                      "freeze_bn": true,
+                                      "nonlinear_classifier": false
+                                     },
+                       "trainer":    {"epochs": 50,
+                                      "patience": 10,
+                                      "type": "Adam",
+                                      "lr": 0.0001,
+                                      "weight_decay": 0.0,
+                                      "lfe_reg": 1.0
+                                     }
+                      }
+}
