@@ -2,7 +2,7 @@
 
 This repository is the official implementation of **Learning Informative Invariant Representations via Hierarchical Latent Decomposition**.
 
-**BLENDER** learns invariant and domain-specific representations through hierarchical latent decomposition, combining classification, reconstruction, and independence regularization for domain generalization.
+**BLENDER** learns domain-invariant and domain-specific representations through hierarchical latent decomposition, combining classification, reconstruction, and independence regularization for domain generalization.
 
 ## Installation
 
@@ -29,8 +29,6 @@ python analyses/model_train.py --model_name blender --dataset_name PACS --seed 4
 ```
 
 This trains across all held-out domains. Configurations are in `methods/configs/<model_name>.json`, and checkpoints are saved to `analyses/models/<model_name>/`.
-
-> The current training script requires `import wandb` and a `wandb.init(...)` call before `model_loader.train()`.
 
 ## Evaluation
 
