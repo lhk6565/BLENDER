@@ -44,9 +44,8 @@ Results are saved to `analyses/results/`.
 
 - `analyses/plot_latent.py`: latent-space visualization.
 - `analyses/plot_reconstruction.py`: RotatedMNIST reconstruction.
-- `analyses/plot_hsic_trajectory.py`: HSIC trajectories from W&B logs.
 
-Adjust experiment selections and W&B run IDs in the scripts before use. Figures are saved to `analyses/figures/`.
+Adjust experiment selections in the scripts before use. Figures are saved to `analyses/figures/`.
 
 ## Citation
 
