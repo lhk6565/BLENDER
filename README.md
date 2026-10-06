@@ -1,6 +1,6 @@
 # Learning Informative Invariant Representations via Hierarchical Latent Decomposition
 
-This repository is the official implementation of **Learning Informative Invariant Representations via Hierarchical Latent Decomposition**.
+This repository is the official implementation of "**[Learning Informative Invariant Representations via Hierarchical Latent Decomposition](https://neurips.cc/virtual/2026/loc/sydney/poster/155712)**".
 
 **BLENDER** learns domain-invariant and domain-specific representations through hierarchical latent decomposition, combining classification, reconstruction, and independence regularization for domain generalization.
 
