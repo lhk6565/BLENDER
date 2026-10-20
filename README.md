@@ -25,27 +25,27 @@ python datasets/download.py
 Run from the repository root:
 
 ```bash
-python analyses/model_train.py --model_name blender --dataset_name PACS --seed 42
+python analysis/model_train.py --model_name blender --dataset_name PACS --seed 42
 ```
 
-This trains across all held-out domains. Configurations are in `methods/configs/<model_name>.json`, and checkpoints are saved to `analyses/models/<model_name>/`.
+This trains across all held-out domains. Configurations are in `methods/configs/<model_name>.json`, and checkpoints are saved to `analysis/models/<model_name>/`.
 
 ## Evaluation
 
-Set `data_list`, `model_list`, and `seeds` in `analyses/performance.py` to match your saved checkpoints, then run:
+Set `data_list`, `model_list`, and `seeds` in `analysis/performance.py` to match your saved checkpoints, then run:
 
 ```bash
-python analyses/performance.py
+python analysis/performance.py
 ```
 
-Results are saved to `analyses/results/`.
+Results are saved to `analysis/results/`.
 
 ## Analysis
 
-- `analyses/plot_latent.py`: latent-space visualization.
-- `analyses/plot_reconstruction.py`: RotatedMNIST reconstruction.
+- `analysis/plot_latent.py`: latent-space visualization.
+- `analysis/plot_reconstruction.py`: RotatedMNIST reconstruction.
 
-Adjust experiment selections in the scripts before use. Figures are saved to `analyses/figures/`.
+Adjust experiment selections in the scripts before use. Figures are saved to `analysis/figures/`.
 
 ## Citation
 

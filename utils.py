@@ -34,7 +34,7 @@ def set_seed(seed=42):
 def get_global_seed():
     return _GLOBAL_SEED
 
-def build_save_path(model_name, dataset_name, test_domain, seed, base_dir= "./analyses/models/"):
+def build_save_path(model_name, dataset_name, test_domain, seed, base_dir= "./analysis/models/"):
     folder_path = os.path.join(base_dir, model_name)
     os.makedirs(folder_path, exist_ok=True)
     return f"{folder_path}/{model_name}_{dataset_name}_{test_domain}_{seed}.pt"

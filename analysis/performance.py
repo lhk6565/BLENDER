@@ -23,7 +23,7 @@ class PerformanceEvaluator:
         return getattr(module, cls_name)
     
     @staticmethod
-    def run(data_list, model_list, seeds, save_path='./analyses/results/'):
+    def run(data_list, model_list, seeds, save_path='./analysis/results/'):
         results = []
         header = ['dataset', 'test_domain', 'model_name', 'seed', 'test_accuracy']
 
@@ -89,4 +89,4 @@ if __name__ == '__main__':
     model_list = ['blender', 'diva', 'dirt', 'lfme', 'arith']
     seeds = [41, 42, 43, 44, 45]
 
-    PerformanceEvaluator.run(data_list, model_list, seeds, save_path='./analyses/results/')
+    PerformanceEvaluator.run(data_list, model_list, seeds, save_path='./analysis/results/')

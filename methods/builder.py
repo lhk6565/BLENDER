@@ -327,7 +327,7 @@ class DirtBuilder(ModelLoaderBase):
                                             dataset_name=self.dataloader.dataset_name,
                                             test_domain=str(self.dataloader.test_domain),
                                             seed=get_global_seed(),
-                                            base_dir= f"./analyses/models/{self.model_config['model_name']}/")
+                                            base_dir= f"./analysis/models/{self.model_config['model_name']}/")
         
         self.model_config['pretrained_stargan_path'] = self.starGAN_path
 

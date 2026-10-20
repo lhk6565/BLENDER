@@ -67,7 +67,7 @@ class ReconVisualizer:
     
     # initial code (Not used for final paper, but can be used for quick checks)
     @staticmethod
-    def plot_reconstruction(dataset_name, model_name, test_domain=[5], save_path='analyses/figures/reconstruction/'):        
+    def plot_reconstruction(dataset_name, model_name, test_domain=[5], save_path='analysis/figures/reconstruction/'):        
         if model_name in MODEL_DISPATCH:
             builder_name = MODEL_DISPATCH[model_name]
 
@@ -120,7 +120,7 @@ class ReconVisualizer:
 
     # main reconstruction
     @staticmethod
-    def plot_reconstruction_6X1(save_path="analyses/figures/recon_grids_6x1/", models=("blender", "diva"), num_samples=100, dpi=600):
+    def plot_reconstruction_6X1(save_path="analysis/figures/recon_grids_6x1/", models=("blender", "diva"), num_samples=100, dpi=600):
         dataset_name = "RotatedMNIST"
         domains=(0,1,2,3,4,5)
         save_path = Path(save_path)
@@ -241,7 +241,7 @@ class ReconVisualizer:
 
     # sampling based reconstruction
     @staticmethod
-    def plot_sampled_reconstruction(model_name="blender", split="train", mode="eval", num_sets=20, save_path="analyses/figures/recon_sampling/",
+    def plot_sampled_reconstruction(model_name="blender", split="train", mode="eval", num_sets=20, save_path="analysis/figures/recon_sampling/",
                                     max_batches_collect=100_000, dpi=600, force_sample_spec=True, seed=0):
 
         dataset_name = "RotatedMNIST"
@@ -429,9 +429,9 @@ if __name__ == '__main__':
         for model_name, test_domain in product(model_list, test_domains):
             test_domain = [test_domain]
             if dataset_name == 'RotatedMNIST':
-                ReconVisualizer.plot_reconstruction(dataset_name, model_name, test_domain, save_path=f'./analyses/figures/reconstruction/')
+                ReconVisualizer.plot_reconstruction(dataset_name, model_name, test_domain, save_path=f'./analysis/figures/reconstruction/')
 
     # Plot for final reconstruction grids (6x1) for RotatedMNIST
-    ReconVisualizer.plot_reconstruction_6X1(save_path="./analyses/figures/final/recon_grids_6x1/", num_samples=100)
+    ReconVisualizer.plot_reconstruction_6X1(save_path="./analysis/figures/final/recon_grids_6x1/", num_samples=100)
 
-    ReconVisualizer.plot_sampled_reconstruction(model_name="blender", num_sets=50, save_path="./analyses/figures/final/recon_sampling/", force_sample_spec=True, dpi=1200)
+    ReconVisualizer.plot_sampled_reconstruction(model_name="blender", num_sets=50, save_path="./analysis/figures/final/recon_sampling/", force_sample_spec=True, dpi=1200)

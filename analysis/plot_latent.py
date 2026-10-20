@@ -59,7 +59,7 @@ class LatentVisualizer:
     
     # initial plot
     @staticmethod
-    def plot_latent(dataset_name, model_name, test_domain=[5], save_path='analyses/figures/latentspace/'):
+    def plot_latent(dataset_name, model_name, test_domain=[5], save_path='analysis/figures/latentspace/'):
         # Load model
         if model_name in MODEL_DISPATCH:
             builder_name = MODEL_DISPATCH[model_name]
@@ -267,7 +267,7 @@ class LatentVisualizer:
         plt.close(fig)
 
     @staticmethod
-    def save_all_latents_tsne_rotatedmnist(model_name="blender", test_domains=None, save_path="analyses/figures/latentspace_elements/", max_points=2000, perplexity=100, domain_labels=None, class_labels=None):
+    def save_all_latents_tsne_rotatedmnist(model_name="blender", test_domains=None, save_path="analysis/figures/latentspace_elements/", max_points=2000, perplexity=100, domain_labels=None, class_labels=None):
         dataset_name = "RotatedMNIST"
         if test_domains is None:
             test_domains = list(range(6))
@@ -385,7 +385,7 @@ class LatentVisualizer:
             print(f"[Done td={td}] saved original/inv/spec for domain+class coloring")
 
     @staticmethod
-    def save_specific_latent_tsne_rotatedmnist(model_name="blender", test_domains=None, save_path="analyses/figures/latentspace_specific/", max_points=2000, perplexity=100):
+    def save_specific_latent_tsne_rotatedmnist(model_name="blender", test_domains=None, save_path="analysis/figures/latentspace_specific/", max_points=2000, perplexity=100):
         dataset_name = "RotatedMNIST"
         if test_domains is None:
             test_domains = list(range(6))
@@ -478,11 +478,11 @@ if __name__ == '__main__':
 
         for model_name, test_domain in product(model_list, test_domains):
             test_domain = [test_domain]
-            LatentVisualizer.plot_latent(dataset_name, model_name, test_domain, save_path=f'./analyses/figures/latentspace/')
+            LatentVisualizer.plot_latent(dataset_name, model_name, test_domain, save_path=f'./analysis/figures/latentspace/')
 
     # Plot for latent space figures (all elements) for RotatedMNIST -> Main Plot
-    LatentVisualizer.save_all_latents_tsne_rotatedmnist(model_name="blender", test_domains=list(range(6)), save_path="./analyses/figures/latentspace_elements/",
+    LatentVisualizer.save_all_latents_tsne_rotatedmnist(model_name="blender", test_domains=list(range(6)), save_path="./analysis/figures/latentspace_elements/",
                                                         max_points=2000, perplexity=100, domain_labels=["0°","15°","30°","45°","60°","75°"], class_labels=[str(i) for i in range(10)])
 
     # Plot for final specific latent space figures for RotatedMNIST -> Appendix Plot
-    LatentVisualizer.save_specific_latent_tsne_rotatedmnist(model_name="blender", test_domains=list(range(6)), save_path="./analyses/figures/latentspace_specific/", max_points=2000, perplexity=100)
+    LatentVisualizer.save_specific_latent_tsne_rotatedmnist(model_name="blender", test_domains=list(range(6)), save_path="./analysis/figures/latentspace_specific/", max_points=2000, perplexity=100)
