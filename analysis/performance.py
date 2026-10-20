@@ -6,6 +6,7 @@ import torch.nn.functional as F
 
 import importlib
 import pandas as pd
+import numpy as np
 from tqdm import tqdm
 from functools import lru_cache
 
@@ -21,9 +22,14 @@ class PerformanceEvaluator:
     def _get_class(mod_name: str, cls_name: str):
         module = importlib.import_module(mod_name)
         return getattr(module, cls_name)
+
+    @staticmethod
+    def standard_error(values):
+        values = values.to_numpy(dtype=float)
+        return np.std(values, ddof=0) / np.sqrt(len(values))
     
     @staticmethod
-    def run(data_list, model_list, seeds, save_path='./analysis/results/'):
+    def run(data_list, model_list, seeds, save_path='./analysis/results/performance'):
         results = []
         header = ['dataset', 'test_domain', 'model_name', 'seed', 'test_accuracy']
 
@@ -68,17 +74,17 @@ class PerformanceEvaluator:
         print(f'[SAVED] {file_path}')
 
         df_domain_avg = (df.groupby(['dataset', 'model_name', 'test_domain']).agg(mean_acc=('test_accuracy', 'mean'),
-                                                                                  std_acc=('test_accuracy', 'std')).reset_index())
+                                                                                  se_acc=('test_accuracy', PerformanceEvaluator.standard_error)).reset_index())
         df_domain_avg['mean_acc_str'] = df_domain_avg['mean_acc'].map(lambda x: f"{x*100:.1f}" if pd.notna(x) else "")
-        df_domain_avg['std_acc_str'] = df_domain_avg['std_acc'].map(lambda x: f"{x*100:.1f}" if pd.notna(x) else "")
+        df_domain_avg['se_acc_str'] = df_domain_avg['se_acc'].map(lambda x: f"{x*100:.1f}" if pd.notna(x) else "")
         df_domain_avg.to_csv(os.path.join(save_path, 'model_performance_per_domain.csv'), index=False)
         print(f'[SAVED] {os.path.join(save_path, "model_performance_per_domain.csv")}')
 
         df_seed_avg = (df.groupby(['dataset', 'model_name', 'seed'])['test_accuracy'].mean().reset_index())
         avg_performance = (df_seed_avg.groupby(['dataset', 'model_name']).agg(mean_acc=('test_accuracy', 'mean'),
-                                                                              std_acc=('test_accuracy', 'std')).reset_index())
+                                                                              se_acc=('test_accuracy', PerformanceEvaluator.standard_error)).reset_index())
         avg_performance['mean_acc_str'] = avg_performance['mean_acc'].map(lambda x: f"{x*100:.1f}" if pd.notna(x) else "")
-        avg_performance['std_acc_str'] = avg_performance['std_acc'].map(lambda x: f"{x*100:.1f}" if pd.notna(x) else "")
+        avg_performance['se_acc_str'] = avg_performance['se_acc'].map(lambda x: f"{x*100:.1f}" if pd.notna(x) else "")
         avg_performance.to_csv(os.path.join(save_path, 'model_performance_avg.csv'), index=False)
         print(f'[SAVED] {os.path.join(save_path, "model_performance_avg.csv")}')
 
@@ -89,4 +95,4 @@ if __name__ == '__main__':
     model_list = ['blender', 'diva', 'dirt', 'lfme', 'arith']
     seeds = [41, 42, 43, 44, 45]
 
-    PerformanceEvaluator.run(data_list, model_list, seeds, save_path='./analysis/results/')
+    PerformanceEvaluator.run(data_list, model_list, seeds, save_path='./analysis/results/performance')
